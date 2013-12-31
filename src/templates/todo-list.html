@@ -1,0 +1,17 @@
+<div id="top">
+    <input id="button" class="btn btn-success" type="button" value="Create">
+    <textarea id="input"></textarea>
+</div>
+<div id="content">
+    <% _.each(collection, function(todo){ %>
+        <li class="todo">
+            <% if(!todo.attributes.done) { %><div id="<%= todo.attributes.id %>"><% } %>
+            <% if(todo.attributes.done) { %><div id="<%= todo.attributes.id %>" class="done"><% } %>
+                <input class="delete btn btn-danger" type="button" value="Delete">
+                <input class="completed btn btn-primary" type="button" value="Mark">
+                <input class="edit btn btn-warning" type="button" value="Edit">
+                <p><%= todo.attributes.text %></p>
+            </div>
+        </li>
+    <% }); %>
+</div>

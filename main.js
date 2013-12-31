@@ -5,27 +5,26 @@ require.config({
         underscore: "src/lib/underscore-amd/underscore",
         backbone: "src/lib/backbone-amd/backbone",
         localstorage: "src/lib/backbone.localstorage/backbone.localstorage",
-        mainview: "src/views/mainview",
-        navview: "src/views/navview",
-        contentview: "src/views/contentview",
 
-        //Brocco
-        showdown: "src/lib/brocco/showdown",
-        codemirror: "src/lib/brocco/codemirror",
-        jsmode: "src/lib/brocco/codemirror-javascript-mode",
-        xmlmode: "src/lib/brocco/codemirror-xml-mode",
-        cssmode: "src/lib/brocco/codemirror-css-mode",
-        htmlmixedmode: "src/lib/brocco/codemirror-htmlmixed-mode",
-        brocco: "src/lib/brocco/brocco.js",
-        htmlncss: "src/lib/brocco/html-and-css",
-        jumpto: "src/lib/brocco/jump-to"
+        router: "src/router",
+
+        masterview: "src/views/masterview",
+        navview: "src/views/navview",
+        todoview: "src/views/todoview",
+
+        todomodel: "src/model/todomodel",
+        todocollection: "src/model/todocollection"
     },
     shim: {
-        "backbone": {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
+        backbone: {
+            deps: ["underscore", "jquery"],
+            exports: "backbone"
+        },
+        localstorage: {
+            deps: ["backbone"],
+            exports: "LocalStorage"
         }
     }
 
 });
-require(['src/app'], function (App) { "use strict"; App.start(); });
+require(["src/router"], function (Router) { "use strict"; var router = new Router(); });
