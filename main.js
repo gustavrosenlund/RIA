@@ -4,7 +4,7 @@ require.config({
         jquery: "src/lib/jquery/jquery",
         underscore: "src/lib/underscore-amd/underscore",
         backbone: "src/lib/backbone-amd/backbone",
-        localstorage: "src/lib/backbone.localstorage/backbone.localstorage.min",
+        localstorage: "src/lib/backbone.localstorage/backbone.localStorage.min",
 
         router: "src/router",
 
