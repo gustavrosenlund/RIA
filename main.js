@@ -1,10 +1,11 @@
 require.config({
+    //Skapar genvägar till min olika filer för att smidigare komma åt dem
     paths: {
         text: "src/lib/requirejs-text/text",
         jquery: "src/lib/jquery/jquery",
         underscore: "src/lib/underscore-amd/underscore",
         backbone: "src/lib/backbone-amd/backbone",
-        localstorage: "src/lib/backbone.localstorage/backbone.localStorage",
+        localstorage: "src/lib/localstorage/backbone.localstorage",
 
         router: "src/router",
 
@@ -27,4 +28,5 @@ require.config({
     }
 
 });
+//Skapar en instans av min router som kickar igång hela applicationen
 require(["src/router"], function (Router) { "use strict"; var router = new Router(); });
